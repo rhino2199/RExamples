@@ -1,0 +1,27 @@
+---
+title: "Example"
+author: "Ryan Circelli"
+date: "10/30/2019"
+output: html_document
+---
+
+# Example
+## subtitle
+This is a *demo*!
+
+```{r loading_things, ggplot, echo=FALSE, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(knitr)
+source("Data Visualisation Lecture.r")
+```
+
+The country with the most college was `r most_college`
+
+```{r plot}
+ggplot(data = midwest) +
+  geom_point(
+    mapping = aes(x = percollege, y = percadultpoverty,
+                  color = state)) +
+      scale_color_brewer(palette = "Set3")
+```
